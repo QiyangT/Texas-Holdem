@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Texas Hold'em</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Language" content="en-us" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="../../Includes/Styles/ReturnAndShareControls.css" />
+        <script type="text/javascript" src="../../Includes/Script/FeatureDetectES5Properties.js"></script>
+        <script type="text/javascript" src="js/Card.js"></script>
+        <script type="text/javascript" src="js/Deck.js"></script>
+        <script type="text/javascript" src="js/Player.js"></script>
+        <script type="text/javascript" src="js/Poker.js"></script>
+        <script type="text/javascript" src="js/Game.js"></script>
+        <script type="text/javascript" src="../../Includes/Script/ReturnAndShareControls.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    </head>
+    <body>
+        <div id="Wrapper">
+            <div id="HeadingSection">
+                <div id="ReturnAndShareControls"></div>
+                <div id="PerformanceContent">
+                    <h1 id="PageTitle">Texas Hold'em</h1>
+                    <form method="post">
+                      <label for="fname">Buy or sell tokens (1 eth for 1000 tokens)</label><br>
+                      <input type="text" id="fname" name="fname" value="" autocomplete="off"><br>
+                      <input class="inner" type='button' value="Buy" onclick="BuyChips();"/>
+                      <input class="inner" type='button' value="Sell" onclick="SellChips(document.getElementById('fname').value);"/>
+                    </form> 
+                </div>
+                <div id="actionButton">
+                    <input class="actionButton" type="submit" value="START" tabIndex="1" onclick="Start();" />
+                </div>
+            </div>
+            <div id="PlayersMoneyLarge">$0000</div>
+            <div id="PlayersHandShadow"></div>
+            <div id="LeftPlayer">
+                <div id="LeftPlayerPos" style="display: none;">
+                    <img src="images/playerDB.png" />
+                </div>
+                <div id="LeftPlayerMoney">$0000</div>
+            </div>
+            <div id="LeftPlayersHand">
+                <div>
+                    <div  id='LeftPlayerCard0' class="playerCard"><img id='leftPlayerCard0' src="images/cards/Back.png" /></div>
+                    <div  id='LeftPlayerCard1' class="playerCard"><img id='leftPlayerCard1' src="images/cards/Back.png" /></div>
+                </div>
+            </div>
+            <div id="TopPlayer">
+                <div id="TopPlayerPos" style="display: none;">
+                    <img src="images/playerSB.png" />
+                </div>
+                <div id="TopPlayerMoney">$0000</div>
+            </div>
+            <div id="TopPlayersHand">
+                <div>
+                    <div  id='TopPlayerCard0' class="playerCard"><img id='topPlayerCard0' src="images/cards/Back.png" /></div>
+                    <div  id='TopPlayerCard1' class="playerCard"><img id='topPlayerCard1' src="images/cards/Back.png" /></div>
+                </div>
+            </div>
+            <div id="RightPlayer">
+                <div class="right">
+                    <div id="RightPlayerPos" style="display: none;">
+                        <img src="images/playerBB.png" />
+                    </div>
+                    <div id="RightPlayerMoney">$0000</div>
+                </div>
+            </div>            
+            <div id="RightPlayersHand">
+                <div>
+                    <div  id='RightPlayerCard0' class="playerCard"><img id='rightPlayerCard0' src="images/cards/Back.png" /></div>
+                    <div  id='RightPlayerCard1' class="playerCard"><img id='rightPlayerCard1' src="images/cards/Back.png" /></div>
+                </div>
+            </div>
+            <div id="PotFlop">
+                <div id="pot">$0000</div>
+                <div class="flopCard"><img name='card' id="flopCard0" src="images/cards/Back.png" /></div>
+                <div class="flopCard"><img name='card' id="flopCard1" src="images/cards/Back.png" /></div>
+                <div class="flopCard"><img name='card' id="flopCard2" src="images/cards/Back.png" /></div>
+                <div class="flopCard"><img name='card' id="flopCard3" src="images/cards/Back.png" /></div>
+                <div class="flopCard"><img name='card' id="flopCard4" src="images/cards/Back.png" /></div>                
+            </div>
+            <div id="PlayersHand">
+                <div>
+                    <div id="PlayerCard0" class="playerCard"><img id="playerCard0" src="images/cards/Back.png" /></div>
+                    <div id="PlayerCard1" class="playerCard"><img id="playerCard1" src="images/cards/Back.png" /></div>
+                </div>
+            </div>
+            <div id="PlayersOptionsGlow" style="display: none;"></div>
+            <div id="PlayersOptionsFoldCallRaise" style="display: none;">
+                <div>
+                    <a href="javascript:game.Fold(game.curPlayer);" class="buttonOptionLeft optionElement" tabIndex="2">Fold</a>
+                    <div class="buttonOptionDivider optionElement"></div>
+                    <a href="javascript:game.Call(game.curPlayer);" class="buttonOption optionElement" tabIndex="3">Call</a>
+                    <div class="buttonOptionDivider optionElement"></div>
+                    <a href="javascript:game.Raise(game.curPlayer, 100);" class="buttonOptionRight optionElement" tabIndex="4">Raise</a>
+                </div>
+            </div>
+            <div id="PlayerChips">
+                <div id="PlayerPos" style="display: none;">
+                    <img src="images/playerDB.png" />
+                </div>
+                <div id="PlayerMoney">$0000</div>
+                <div id="Chips">
+                    <div class="chip"><img src="images/chip.png" /></div>
+                </div>
+            </div>
+            <div id="playerComment" class="topPlayerComment" style="display: none;">
+                <div id="playerCommentContent">
+                    <div id="playerCommentContentCenter">
+                        <span class="action">Raise</span>
+                        <br />
+                        <span class="money">$0000</span>
+                    </div>
+                </div>
+            </div>
+            <div id="gameAlert" style="display: none;">
+                <span class="message"><a href="javascript:Cont();" tabIndex="5">You Win!</a></span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+                window.ethereum.enable();
+            }
+            else if (window.web3) {
+                window.web3 = new Web3(window.web3.currentProvider);
+            }
+            else {
+                window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!');
+            }
+
+            const abi = [
+			    {
+			        "inputs": [],
+			        "payable": false,
+			        "stateMutability": "nonpayable",
+			        "type": "constructor"
+			    },
+			    {
+			        "anonymous": false,
+			        "inputs": [
+			            {
+			                "indexed": true,
+			                "internalType": "address",
+			                "name": "from",
+			                "type": "address"
+			            },
+			            {
+			                "indexed": true,
+			                "internalType": "address",
+			                "name": "to",
+			                "type": "address"
+			            },
+			            {
+			                "indexed": false,
+			                "internalType": "uint256",
+			                "name": "value",
+			                "type": "uint256"
+			            }
+			        ],
+			        "name": "Transfer",
+			        "type": "event"
+			    },
+			    {
+			        "anonymous": false,
+			        "inputs": [
+			            {
+			                "indexed": false,
+			                "internalType": "address payable",
+			                "name": "owner1",
+			                "type": "address"
+			            },
+			            {
+			                "indexed": false,
+			                "internalType": "address",
+			                "name": "owner2",
+			                "type": "address"
+			            },
+			            {
+			                "indexed": false,
+			                "internalType": "bool",
+			                "name": "val",
+			                "type": "bool"
+			            }
+			        ],
+			        "name": "test",
+			        "type": "event"
+			    },
+			    {
+			        "constant": true,
+			        "inputs": [
+			            {
+			                "internalType": "address",
+			                "name": "",
+			                "type": "address"
+			            }
+			        ],
+			        "name": "accounts",
+			        "outputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "tokens",
+			                "type": "uint256"
+			            },
+			            {
+			                "internalType": "bool",
+			                "name": "isInGame",
+			                "type": "bool"
+			            },
+			            {
+			                "internalType": "bool",
+			                "name": "isValid",
+			                "type": "bool"
+			            }
+			        ],
+			        "payable": false,
+			        "stateMutability": "view",
+			        "type": "function"
+			    },
+			    {
+			        "constant": false,
+			        "inputs": [],
+			        "name": "buy",
+			        "outputs": [],
+			        "payable": true,
+			        "stateMutability": "payable",
+			        "type": "function"
+			    },
+			    {
+			        "constant": false,
+			        "inputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "nTokens",
+			                "type": "uint256"
+			            }
+			        ],
+			        "name": "buyTokens",
+			        "outputs": [],
+			        "payable": true,
+			        "stateMutability": "payable",
+			        "type": "function"
+			    },
+			    {
+			        "constant": true,
+			        "inputs": [],
+			        "name": "checkExchangeRate",
+			        "outputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "",
+			                "type": "uint256"
+			            }
+			        ],
+			        "payable": false,
+			        "stateMutability": "view",
+			        "type": "function"
+			    },
+			    {
+			        "constant": true,
+			        "inputs": [],
+			        "name": "ethToToken",
+			        "outputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "",
+			                "type": "uint256"
+			            }
+			        ],
+			        "payable": false,
+			        "stateMutability": "view",
+			        "type": "function"
+			    },
+			    {
+			        "constant": false,
+			        "inputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "nTokens",
+			                "type": "uint256"
+			            }
+			        ],
+			        "name": "sell",
+			        "outputs": [],
+			        "payable": true,
+			        "stateMutability": "payable",
+			        "type": "function"
+			    },
+			    {
+			        "constant": false,
+			        "inputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "nTokens",
+			                "type": "uint256"
+			            }
+			        ],
+			        "name": "sellTokens",
+			        "outputs": [],
+			        "payable": true,
+			        "stateMutability": "payable",
+			        "type": "function"
+			    },
+			    {
+			        "constant": true,
+			        "inputs": [],
+			        "name": "tokenBalance",
+			        "outputs": [
+			            {
+			                "internalType": "uint256",
+			                "name": "",
+			                "type": "uint256"
+			            }
+			        ],
+			        "payable": false,
+			        "stateMutability": "view",
+			        "type": "function"
+			    }
+			];
+            const address = '0xF9257a14d5400BaA2774991BB8e9DF45FE3689E8';
+            const deployedEthbay = new web3.eth.Contract(abi, address);
+
+            var BuyChips = async function() {
+                await deployedEthbay.methods.buy().send({from: "0x978599af1753bD5198dd388FD3735458686b8C60", value: web3.utils.toWei('2.5','Ether')});
+                setTimeout(function() {}, 1000);
+                document.getElementById("PlayerMoney").innerHTML = "$" + 2500;
+            }
+
+            var SellChips = async function(tokens) {
+                await deployedEthbay.methods.sell(tokens).send({from: "0x978599af1753bD5198dd388FD3735458686b8C60"});
+                setTimeout(function() {}, 1000);
+                game.players[0].chips = game.players[0].chips - tokens;
+                document.getElementById("PlayerMoney").innerHTML = "$" + game.players[0].chips;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,808 @@
+﻿html,body
+{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+
+}
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000;
+    font-family: Arial;
+    color: #999999;
+    font-size: 12px;
+}
+
+#Wrapper
+{
+    background: url('../images/background.png') no-repeat center center;
+    width: 100%;
+    height: 100%;
+    min-width: 980px;
+    min-height: 600px;
+    position:relative;
+    overflow:hidden;
+}
+
+#ReturnButton
+{
+    position: relative;
+    display: block;
+    margin: 0 0 0 auto;
+    width: 210px;
+    height: 29px;
+    text-indent: -9999px;
+    background-image: url('http://ie.microsoft.com/testdrive/Includes/Image/ReturnButton.png');
+}
+
+#ReturnButton:hover
+{
+    background-image: url('http://ie.microsoft.com/testdrive/Includes/Image/ReturnButtonHover.png');
+}
+
+#HeadingSection
+{
+    margin: 0px 20px 20px 20px;
+}
+
+#PerformanceContent
+{
+    position: relative;
+    top: -22px;
+    width: 300px;
+}
+
+#PageTitle
+{
+    font-family: Segoe UI, Arial;
+    font-weight: normal;
+    color: #D8F2FF;
+    font-size: 33px;
+    line-height: 33px;
+}
+
+.finishedLabel
+{
+    color: #00DD58;
+}
+
+#timeFinished
+{
+    font-family: Segoe UI, Arial;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #00DD58;
+}
+
+input.actionButton
+{
+    cursor: pointer;
+    background: url('../images/buttonGeneric_Static.png') no-repeat;
+    border: 0px;
+    width: 162px;
+    height: 32px;
+    line-height: 32px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+input.actionButton:hover
+{
+    cursor: pointer;
+    background: url('../images/buttonGeneric_Hover.png') no-repeat;
+    border: 0px;
+    width: 162px;
+    height: 32px;
+    line-height: 32px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/*
+#PotFlop
+{
+    position: absolute;
+    margin: auto;
+    top: -150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 810px;
+    height: 220px;
+    min-width: 810px;
+    min-height: 220px;
+}
+
+.flopCard
+{
+    width: 160px;
+    height: 220px;
+    background: url('../images/cardPlaceHolder.png') no-repeat top left;
+    display: inline-block;
+    float: left;
+    margin: 0px 0px 0px 1px;
+}
+
+.flopCard img
+{
+    margin: 10px;
+}
+*/
+
+#PotFlop
+{
+    position: absolute;
+    margin: auto;
+    top: -150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 64.7959%;
+    height: 30%;
+    
+}
+
+.flopCard
+{
+    width: 18.8976%;
+    height: auto;
+    border:1px solid #323232;
+       border-radius:7px;
+    display: inline-block;
+    float: left;
+    margin: 0px 0px 0px 1px;
+}
+
+.flopCard img
+{
+    margin: 5%;
+    width: 90%;
+    height: auto;
+}
+
+
+
+#pot
+{
+    margin: 0px auto 10px auto;
+    background: url('../images/potBackground.png') no-repeat;
+    width: 458px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    font-weight: normal;
+    color: #FFFF99;
+    text-align: center;
+}
+
+#PlayersMoneyLarge
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 0px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 980px;
+    height: 220px;
+    min-width: 980px;
+    min-height: 220px;
+    opacity: 0.4;
+    font-size: 300px;
+    color: #333333;    
+    text-align: center;
+}
+
+#PlayersHandShadow
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 0px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../images/handShadow.png') no-repeat;
+    width: 330px;
+    height: 220px;
+    min-width: 330px;
+    min-height: 220px;
+}
+
+#LeftPlayer
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto auto 0px;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    width: 300px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+#LeftPlayer div
+{
+    float: left;
+    display: inline;
+}
+
+#LeftPlayerMoney
+{
+    background: url('../images/otherPlayerMoneyBackground.png') no-repeat;
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFF99;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#TopPlayer
+{
+    overflow: hidden;
+    position: absolute;
+    margin: 60px auto auto auto;
+    top: 0;
+    bottom: 0;
+    left: 500px;
+    right: 0;
+    width: 300px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+#TopPlayer div
+{
+    float: left;
+    display: inline;
+}
+
+#TopPlayerMoney
+{
+    background: url('../images/otherPlayerMoneyBackground.png') no-repeat;
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFF99;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#RightPlayer
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto 0px auto auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 10px;
+    width: 300px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+#RightPlayer div
+{
+    float: left;
+    display: inline;
+}
+
+.right
+{
+    float: right !important;
+}
+
+#RightPlayerMoney
+{
+    background: url('../images/otherPlayerMoneyBackground.png') no-repeat;
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFF99;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#PlayersHand
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 50px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 980px;
+    height: 220px;
+    min-width: 980px;
+    min-height: 220px;
+    text-align: center;
+}
+
+.playerCard
+{
+    display: inline;
+}
+
+.playerCard img
+{
+    padding: 1px;
+    cursor: pointer;
+}
+
+#PlayerCard0 img
+{
+    position: relative;
+    width: 140px;
+    height: 200px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.99026807, M12=0.13917310, M21=-0.13917310, M22=0.99026807, sizingMethod='auto expand')";
+    -webkit-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0);
+    -moz-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0);
+    -o-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0);
+    top: 10px; 
+    left: 60px;
+}
+
+#PlayerCard1 img
+{
+    position: relative;
+    width: 140px;
+    height: 200px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.99026807, M12=-0.13917310, M21=0.13917310, M22=0.99026807, sizingMethod='auto expand')";
+    -webkit-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0);
+    -moz-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0);
+    -o-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0);
+    top: 10px; 
+    left: -60px;
+}
+
+#PlayersOptionsGlow
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 0px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 980px;
+    height: 162px;
+    min-width: 980px;
+    min-height: 162px;
+    text-align: center;
+    background: url('../images/optionsGlow.png') no-repeat bottom center;
+}
+
+#PlayersOptionsFoldCallRaise
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 40px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 460px;
+    height: 60px;
+    min-width: 460px;
+    min-height: 60px;
+    text-align: center;
+}
+
+#PlayersOptionsCheckBet
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 40px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 306px;
+    height: 60px;
+    min-width: 306px;
+    min-height: 60px;
+    text-align: center;
+}
+
+#PlayersOptionsDone
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 100px auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 980px;
+    height: 60px;
+    min-width: 980px;
+    min-height: 60px;
+    text-align: center;
+}
+
+#PlayerChips
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto 0px auto;
+    top: 0;
+    bottom: 0;
+    left: 680px;
+    right: 0;
+    width: 300px;
+    height: 240px;
+    min-width: 300px;
+    min-height: 240px;
+    text-align: center;
+}
+
+#PlayerMoney
+{
+    margin: 0px auto;
+    background: url('../images/otherPlayerMoneyBackground.png') no-repeat;
+    /* background: url('../images/playerMoneyBackground.png') no-repeat; */
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFF99;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.instructionText
+{
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFF99;
+}
+
+.optionElement
+{
+    float: left;
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+    min-height: 60px;
+}
+
+.buttonOptionDivider
+{
+    width: 2px;
+    height: 60px;
+    background: url('../images/buttonOptionDivider.png') no-repeat;
+}
+
+.buttonOptionLeft
+{
+    cursor: pointer;
+    width: 152px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: url('../images/buttonOptionLeft_Static.png') no-repeat;
+}
+
+.buttonOptionLeft:hover
+{
+    width: 152px;
+    height: 60px;
+    background: url('../images/buttonOptionLeft_Hover.png') no-repeat;
+}
+
+.downLeft
+{
+    background: url('../images/buttonOptionLeft_Down.png') no-repeat !important;
+}
+
+.down
+{
+    background: url('../images/buttonOption_Down.png') no-repeat !important;
+}
+
+.downRight
+{
+    background: url('../images/buttonOptionRight_Down.png') no-repeat !important;
+}
+
+.buttonOption
+{
+    cursor: pointer;
+    width: 152px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: url('../images/buttonOption_Static.png') no-repeat;
+}
+
+.buttonOption:hover
+{
+    width: 152px;
+    height: 60px;
+    background: url('../images/buttonOption_Hover.png') no-repeat;
+}
+
+.buttonOptionRight
+{
+    cursor: pointer;
+    width: 152px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: url('../images/buttonOptionRight_Static.png') no-repeat;
+}
+
+.buttonOptionRight:hover
+{
+    width: 152px;
+    height: 60px;
+    background: url('../images/buttonOptionRight_Hover.png') no-repeat;
+}
+
+.chip
+{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.99026807, M12=0.13917310, M21=-0.13917310, M22=0.99026807, sizingMethod='auto expand')";filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.99026807, M12=0.13917310, M21=-0.13917310, M22=0.99026807, sizingMethod='auto expand');-moz-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0);-webkit-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0);-o-transform: matrix(0.99026807, 0.13917310, -0.13917310, 0.99026807, 0, 0); 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.99026807, M12=0.13917310, M21=-0.13917310, M22=0.99026807, sizingMethod='auto expand')";
+    -webkit-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0);
+    -moz-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0);
+    -o-transform: matrix(0.99026807, -0.13917310, 0.13917310, 0.99026807, 0, 0); 
+    left: 80px;
+}
+
+#playerComment
+{
+    width: 305px;
+    height: 157px;
+}
+
+.leftPlayerComment
+{
+    position: absolute;
+    margin: auto auto auto 0px;
+    top: 50px;
+    bottom: 0;
+    left: 50px;
+    right: 0;
+    background: url('../images/commentBubbleLeftTop.png') no-repeat;
+}
+
+.rightPlayerComment
+{
+    position: absolute;
+    margin: auto 0px auto auto;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 50px;
+    background: url('../images/commentBubbleRightTop.png') no-repeat;
+}
+
+.topPlayerComment
+{
+    position: absolute;
+    margin: 0px auto auto auto;
+    top: 80px;
+    bottom: 0;
+    left: 400px;
+    right: 0;
+    background: url('../images/commentBubbleLeftTop.png') no-repeat;
+}
+
+#playerCommentContent
+{
+    width: 263px;
+    height: 86px;
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto auto auto;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    text-align: center;
+}
+
+#playerCommentContentCenter
+{
+    width: 263px;
+    position: relative;
+    top: 24px;
+}
+
+#playerCommentContentCenter span.action
+{
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 36px;
+    color: #CBECFF;
+    font-weight: bold;
+}
+
+#playerCommentContentCenter span.money
+{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: normal;
+    line-height: 12px;
+}
+
+#gameAlert
+{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 305px;
+    height: 143px;
+    min-width: 305px;
+    min-height: 143px;
+    line-height: 143px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 30px;
+    color: #CBECFF;
+    font-weight: bold;
+    text-align: center;
+    background: url('../images/gameAlert.png') no-repeat;
+}
+
+#LeftPlayersHand
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto auto auto 0px;
+    top: 80px;
+    bottom: 0;
+    left: -80px;
+    right: 0;
+    width: 300px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+
+#LeftPlayersHand div#LeftPlayerCard1 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.13917310096006494, M12=-0.9902680687415704, M21=0.9902680687415704, M22=-0.13917310096006494, SizingMethod='auto expand')";
+    -webkit-transform: matrix(-0.13917310096006494, 0.9902680687415704, -0.9902680687415704, -0.13917310096006494, 0, 0);
+    -moz-transform: matrix(-0.13917310096006494, 0.9902680687415704, -0.9902680687415704, -0.13917310096006494, 0, 0);
+    -o-transform: matrix(-0.13917310096006494, 0.9902680687415704, -0.9902680687415704, -0.13917310096006494, 0, 0);
+    top: 20px; 
+}
+
+#LeftPlayersHand div#LeftPlayerCard0 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.13917310096006546, M12=-0.9902680687415704, M21=0.9902680687415704, M22=0.13917310096006546, SizingMethod='auto expand')";
+    -webkit-transform: matrix(0.13917310096006494, 0.9902680687415704, -0.9902680687415704, 0.13917310096006494, 0, 0);
+    -moz-transform: matrix(0.13917310096006494, 0.9902680687415704, -0.9902680687415704, 0.13917310096006494, 0, 0);
+    -o-transform: matrix(0.13917310096006494, 0.9902680687415704, -0.9902680687415704, 0.13917310096006494, 0, 0); 
+}
+
+#RightPlayersHand
+{
+    overflow: hidden;
+    position: absolute;
+    margin: auto 0px auto auto;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: -160px;
+    width: 325px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+
+#RightPlayersHand div#RightPlayerCard0 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.13917310096006444, M12=0.9902680687415705, M21=-0.9902680687415705, M22=-0.13917310096006444, SizingMethod='auto expand')";
+    -webkit-transform: matrix(-0.13917310096006444, -0.9902680687415705, 0.9902680687415705, -0.13917310096006444, 0, 0);
+    -moz-transform: matrix(-0.13917310096006444, -0.9902680687415705, 0.9902680687415705, -0.13917310096006444, 0, 0);
+    -o-transform: matrix(-0.13917310096006444, -0.9902680687415705, 0.9902680687415705, -0.13917310096006444, 0, 0); 
+    left: 50px;
+    top: 20px; 
+}
+
+#RightPlayersHand div#RightPlayerCard1 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.13917310096006505, M12=0.9902680687415704, M21=-0.9902680687415704, M22=0.13917310096006505, SizingMethod='auto expand')";
+    -webkit-transform: matrix(0.13917310096006444, -0.9902680687415705, 0.9902680687415705, 0.13917310096006444, 0, 0);
+    -moz-transform: matrix(0.13917310096006444, -0.9902680687415705, 0.9902680687415705, 0.13917310096006444, 0, 0);
+    -o-transform: matrix(0.13917310096006444, -0.9902680687415705, 0.9902680687415705, 0.13917310096006444, 0, 0); 
+    left: 50px;
+}
+
+#TopPlayersHand
+{
+    overflow: hidden;
+    position: absolute;
+    margin: 0px auto auto auto;
+    top: -70px;
+    bottom: 0;
+    left: 120px;
+    right: 0;
+    width: 360px;
+    height: 220px;
+    min-width: 300px;
+    min-height: 220px;
+}
+
+#TopPlayersHand div#TopPlayerCard0 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.9902680687415702, M12=-0.13917310096006552, M21=0.13917310096006552, M22=-0.9902680687415702, SizingMethod='auto expand')";
+    -webkit-transform: matrix(-0.9902680687415702, 0.13917310096006552, -0.13917310096006552, -0.9902680687415702, 0, 0);
+    -moz-transform: matrix(-0.9902680687415702, 0.13917310096006552, -0.13917310096006552, -0.9902680687415702, 0, 0);
+    -o-transform: matrix(-0.9902680687415702, 0.13917310096006552, -0.13917310096006552, -0.9902680687415702, 0, 0); 
+    left: 40px;
+}
+
+#TopPlayersHand div#TopPlayerCard1 img
+{
+    position: absolute;
+    display: inline;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-0.9902680687415702, M12=0.13917310096006574, M21=-0.13917310096006574, M22=-0.9902680687415702, SizingMethod='auto expand')";
+    -webkit-transform: matrix(-0.9902680687415702, -0.13917310096006552, 0.13917310096006552, -0.9902680687415702, 0, 0);
+    -moz-transform: matrix(-0.9902680687415702, -0.13917310096006552, 0.13917310096006552, -0.9902680687415702, 0, 0);
+    -o-transform: matrix(-0.9902680687415702, -0.13917310096006552, 0.13917310096006552, -0.9902680687415702, 0, 0); 
+    left: 20px;
+}
+
+.inner
+{
+    display: inline-block;
+}
